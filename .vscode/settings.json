@@ -1,0 +1,40 @@
+{
+    // 全体の設定
+    "editor.tabSize": 2,
+    // htmlの設定
+    "[html]": {
+        // hugoの特殊なhtml (e.g. {{ hoge }} )を変にフォーマットされるのは困るので，全offにする
+        // 一度設定してしまえば，今後はmarkdownしか書かないのでoffでも問題無い
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false,
+    },
+    // markdownの設定
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+    },
+    // 拡張機能：markdown all in oneの設定．デフォルトは全てtrue.
+    // ctrl+.で実行
+    "markdownlint.config": {
+        "MD001": false,
+        "MD002": false,
+        "MD013": false,
+        "MD022": false,
+        "MD025": false,
+        "MD031": false,
+        "MD032": false,
+        "MD033": false,
+        "MD041": false,
+    },
+    // 拡張機能：paste imageの設定
+    // ctrl+alt+vで画像を.mdファイルにコピペできる．
+    // クリップボードの画像をimages/以下に保存して，.mdファイルにそこまでのパスを自動で入力してくれるのでとても便利
+    "pasteImage.defaultName": "YY-MM-DD-HH-mm-ss",
+    "pasteImage.path": "${currentFileDir}/images/",
+    "pasteImage.insertPattern": "${imageSyntaxPrefix}/${imageFilePath}${imageSyntaxSuffix}",
+}

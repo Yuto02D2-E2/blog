@@ -1,0 +1,123 @@
+baseURL: "https://yuto02d2-e2.github.io/blog/"
+title: "yuto's blog"
+author: "yuto"
+theme: "PaperMod"
+DefaultContentLanguage: "en"
+languageCode: "en-US"
+googleAnalytics: G-WMX37QZ9R1
+
+contentDir: "content"
+staticDir: "static"
+layoutDir: "layouts"
+publishDir: "public"
+
+enableRobotsTXT: true
+buildDrafts: false
+# enableGitInfo: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: "yuto's blog"
+  author: "yuto"
+  description: "this is yuto's blog site."
+  keywords: [Blog, Portfolio, PaperMod, Markdown, Hugo, GithubPages]
+  images: ["images/logo.png"]
+  DateFormat: "2006-01-02"
+  defaultTheme: auto # dark, light
+  hidemeta: false
+  showtoc: true
+  tocopen: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+
+  label: # ヘッダーの左側にあるやつ
+    text: "yuto's blog"
+    icon: "images/logo.png"
+    iconHeight: 40
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    subtitle: "written in markdown"
+    imageUrl: "images/logo.png"
+    imageWidth: 256
+    imageHeight: 256
+    buttons:
+      - name: "About me"
+        url: "aboutme"
+      - name: "Site history"
+        url: "sitehistory"
+
+  # profile-modeでアイコンの下に表示される
+  socialIcons:
+    - name: github
+      url: "https://github.com/Yuto02D2-E2/"
+    - name: rss
+      url: "index.xml"
+
+  cover:
+    linkFullImages: true
+
+  # 記事のソースへのリンク
+  editPost:
+    URL: "https://github.com/Yuto02D2-E2/blog/tree/main/content"
+    Text: "view source on github" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    includeScore: true
+    minMatchCharLength: 2
+    keys: ["title", "permalink", "summary", "content", "categories", "tags"]
+    useExtendedSearch: true
+
+  assets:
+    css: "css/custom.css"
+    favicon: "images/favicon.ico"
+
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
+  goldmark:
+    renderer:
+      unsafe: true
+
+# hugo newでeditorを指定するため
+security:
+  exec:
+    allow:
+      - ^code$
+
+minify:
+  disableXML: false
+  minifyOutput: true
+
+menu: # ヘッダーの右側にあるやつ
+  main:
+    - identifier: archives
+      name: archives
+      url: "archives"
+      weight: 10
+    - identifier: categories
+      name: categories
+      url: "categories"
+      weight: 20
+    - identifier: tags
+      name: tags
+      url: "tags"
+      weight: 30
+    - identifier: search
+      name: search
+      url: "search"
+      weight: 40
+
+# for search page
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "mushan.vscode-paste-image",
+        "budparr.language-hugo-vscode",
+        "ecmel.vscode-html-css",
+        "pranaygp.vscode-css-peek"
+    ]
+}
