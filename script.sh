@@ -11,19 +11,18 @@ function colorPrint() {
 }
 
 function make() {
-  read -p "> enter post title:" title
-  set -x
+  read -p "> enter post title (e.g. 'helloworld', '01', or..):" title
   hugo new "posts/$(date '+%Y-%m-%d')/$title/index.md" --editor="code"
-  set +x
 }
 
 function update() {
-  set -x
   # git submodule update --remote --merge
   git add content/* --verbose
-  git commit -m "[update] content/* @($(date '+%Y/%m/%d-%H:%M:%S'))"
-  git push -u origin main
-  set +x
+  git commit -m "[update] content/* at ($(date '+%Y/%m/%d-%H:%M:%S')) via script.sh"
+  read -p "> successfully committed. want to push? [y|n]:" yn
+  if [ "$yn" = "y" ]; then
+    git push -u origin main
+  fi
 }
 
 while true
