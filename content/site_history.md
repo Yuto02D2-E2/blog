@@ -22,6 +22,7 @@ tags:
 - "github actions"
 - "ci"
 - "TODO"
+draft: true
 ---
 
 # はじめに
@@ -67,7 +68,7 @@ JekyllはRubyが必要なので，まずはRuby本体をインストール．WSL
 
 次にtheme(テーマ)を探す．めちゃくちゃ沢山あるが，ピンと来るものに出会えない．
 
-ひたすらググって，やっと[良い感じのやつ](https://adityatelange.github.io/hugo-PaperMod/)に巡り会えたと思ったらこれはHugoのthemeだった．
+ひたすらググって，やっと[良い感じのやつ](https://adityatelange.github.io/hugo-PaperMod/)に巡り会えたと思ったらこれはHugoのthemeだった ．
 
 しょうがないのでHugoの環境構築もして，設定がやりやすそうならHugoに変更する．
 
@@ -122,7 +123,7 @@ mingwをインストールした当時(大学1年生の夏休み)は，アーキ
 1.から
 >ref: <https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/>
 
-に飛ぶ．これをインストールすれば一件落着課と思いきや，今度はmingwがインストール出来ない．
+に飛ぶ．これをインストールすれば一件落着かと思いきや，今度はmingwがインストール出来ない．
 インストーラを起動して，利用規約とかに同意して，\<実行\>すると，`the file has been downloaded incorrectly`というエラーが出て落ちる．調べてみると，「インストーラを使うのは諦めて，手動インストールしろ」と書いてあったのでそうする．
 > ref: <https://stackoverflow.com/questions/46455927/mingw-w64-installer-the-file-has-been-downloaded-incorrectly>
 
@@ -171,33 +172,48 @@ themeを選択する部分で，さっき発見したやつを適用する
 ## Hugo + PaperMod themeを設定する
 `hugo new site <site name>`で雛形を作った後は，色々設定する．
 どこから手を付けていいのか訳が分からんけど，公式ドキュメントをちゃんと読んで，GitHubのサンプルとかを参考にしつつ弄っていく．ドキュメントは英語だけど，勉強だと思って頑張る．
-> ref: <https://gohugo.io/documentation/>
+> ref:<br>
+> <https://gohugo.io/documentation/> <br>
+> <https://gohugo.io/getting-started/configuration/>
 
+### config.yaml
 まずは`config.yaml`について．
 hugoのデフォルトはconfig.tomlだけど，PaperMod製作者の人がyaml推しなのでそれに従う．
 設定項目がめちゃくちゃあるけど，とりあえず全部コメントアウトして，1つずつ確認していった．
 
+### archetypes/
 `archetypes/default.md`は`hugo new post/hoge.md`コマンドで新規ファイルを作成した時のテンプレート．
 デフォルトから若干変更した．複数のテンプレートを作ることも可能だが，やってない．
 
-`layouts/`以下は何も書かなければデフォルト(つまり，theme以下の`layouts/`)が呼ばれるので，気に入らない部分だけ上書きする．404.html，head.html(独自cssの読み込み，texを使うためのjsの読み込み)，footer.html(コピーライト部分変更)とpost_meta.html(postのUpdate時刻を表示)を追加した．
+### layouts/
+`layouts/`以下は何も書かなければデフォルト(つまり，`themes/layouts/`)が呼ばれるので，気に入らない部分だけ上書きする．上書きする時は，`themes/layouts/`からコピーしてきてそれを編集する．オリジナルのものは触らない．
+#### 修正箇所
+- 404.html(顔文字を入れた)
+- extend_head.html(独自cssの読み込み，mathjax(js)の読み込み)
+- footer.html(コピーライト部分変更)
+- post_meta.html(postのUpdate時刻を表示)
+- post_nav_link.html(prevとnextが逆になってるのを修正)
 
-`static/`以下には独自cssやlogo等のstaticなcssを配置する．
+### static/
+`static/`以下には独自cssやlogo等のstaticなimageを配置する．
 `assets/`との違いはよく分かっていないけど，とりあえずstaticだけにした(assetsは消した)<br>
-ビルド後は`/`に展開されるっぽい(`$ hugo`でビルドして確認した．`public/`以下がビルド成果物)<br>
+ビルド後は`/`に展開されるっぽい(`hugo`コマンドでビルドして確認した．`public/`以下がビルド成果物)<br>
 つまり，`static/images/logo.png`は`images/logo.png`で参照する．ややこしい．
 
-`resouces/`はよく分からん．消しても`hugo server`したら生成される．なにこれ？
-
+### content/
 `content/posts/`以下に記事を書いていく．
 `*mk`ファイルの先頭には，必ず`front matter`を記述する．これに基づいてtagとかtitleとか色々Hugoが勝手にやってくれる．
-### front matterについて
+#### front matterについて
 - title: urlなどに使われるので，なるべく英語の方が良いかな
 - date: hugo newした時刻が自動入力される．post上部のupdateなどに表示される
 - cover:カバー画像
 - summary: index.xmlやtagで検索した時のタイトル下に表示される文字列
 - categories, tags:カテゴリーやタグで絞り込むためのもの．post下部にtag一覧が表示される
 - draft: 下書きかどうか(bool)
+
+### other
+`resouces/`はよく分からん．消しても`hugo server`したら生成される．なにこれ？
+`.hugo_build.lock`もよく分からん．
 
 ## 最終的なディレクトリ構成と各ファイルの役割など
 ```plane
@@ -261,11 +277,48 @@ $ cd blog
 $ sh script.sh
 ```
 
+## 快適な編集環境を作りたい
+快適な環境を作るための労力は厭わない精神で色々と設定した．
+
+主に
+- vscode
+- shell script
+- github actions ci
+
+の３点．
+
+### VSCode
+markdown系の拡張機能をいくつか入れた．導入したものは`.vsocde/extensions.json`に記載したので，新たな環境にcloneしてvscodeでそのディレクトリを開くとポップアップでおすすめされるようにしてある．
+
+その中でメインのものは以下
+- markdown-all-in-one：なんか色々できるらしい．まだ使いこなせてない
+- markdownlint：markdownの文法エラーを表示，`ctrl+.`でfixしてくれる．過剰な分はsettings.jsonでignoreする
+- paste-image：markdownファイルがアクティブな状態で`ctrl+alt+v`を押すと，クリップボード内の画像を`./images/YYYY-MM-DD-HH-MM-SS.png`に保存してmarkdownにそこまでのパスを入力してくれる
+
+後，`.vscode/settings.json`に記載した，htmlの自動フォーマットを全offにするのも必須．`.html`に書かれたHugo独自の記法が変にフォーマットされてエラーが出るのでmarkdownのみフォーマットするようにする．
+
+### Shell Script
+いつものやつ．記事の作成とGitHubへのpushをするスクリプトを書いた．日付を打つのとか結構めんどいからとても便利．
+
+### GitHub Actions CI
+デプロイ時は，GitHub Actionsを使用してCIを行う．ローカルでビルドして，GitHubで`public/`を公開する設定にしてもいいけど，`*md`ファイルをそのままpushして向こうでビルドからデプロイまでしてくれる方が良いと思う．
+
+CIのjobを定義したyamlファイルは，GitHubのサイトでActionsタブから探すとHugo用のテンプレートがあったので，それをそのまま使った．ネット上にも`ci.yaml`は色々公開されてるけど(Hugoのdocs含め)少し古いやり方が多かったので，GitHub公式のテンプレートを使うのが一番賢い気がする．
+
+#### 新しいGitHub Actions for GitHub Pages
+> ref:<br>
+> <https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/> <br>
+> <https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml>
+
+`peaceiris/actions-gh-pages@v3`ではなく
+- `actions/configure-pages@v2`
+- `actions/upload-pages-artifact@v1`
+- `actions/deploy-pages@v1`
+
+を使っているのがポイント．これにより，`gh-pages`ブランチを使わずにmainブランチのみで運用できるっぽい．英語読めないから間違ってるかも．
 
 ## デプロイする
 調べた感じ，HugoのサイトはNetlifyでデプロイするのが人気らしいけど，一旦慣れているGitHub Pagesでデプロイする．不満があればNetlifyに乗り換えてもいいかなとは思っている．
-
-デプロイ時は，GitHub Actionsを使用してCIを行う．GitHubのサイトに行って，Actionsタブから探すとHugo用のテンプレートがあったのでそのまま使った．ネット上にも`ci.yaml`は色々公開されてるけど(Hugoのdocs含め)少し古いやり方が多かったので，GitHub公式のテンプレートを使うのが一番賢い気がする．
 
 ## その他
 Google AnalyticsとGoogle Search Console?を設定した．ホームページでも設定したけど未だによく分からん．

@@ -25,6 +25,23 @@ hugoが勝手に作ってくれて便利ですね．
 ##### heading 5 test
 ###### heading 6 test
 
+## emoji test
+:smile:
+:sleeping:
+:fire:
+:poop:
+:+1:
+:-1:
+:v:
+:link:
+:heavy_check_mark:
+:jp:
+:warning:
+:mag:
+:eyes:
+
+> ref: <https://www.webfx.com/tools/emoji-cheat-sheet/>
+
 ## list test
 - list item
   - sub list item
@@ -59,6 +76,8 @@ hugoが勝手に作ってくれて便利ですね．
 
 ## math test
 mathjaxというライブラリを使ってレンダリング？してるんだけど，このmathjaxというやつがmarkdownと相性が悪くてエラーを消すのが大変だった．
+
+今調べてみたら，mathjax以外にもkatexというのがあるっぽい．
 
 今はちゃんとインラインモードとスタンドアロンモード両方使える
 
