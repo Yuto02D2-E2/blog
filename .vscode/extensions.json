@@ -5,6 +5,7 @@
         "mushan.vscode-paste-image",
         "budparr.language-hugo-vscode",
         "ecmel.vscode-html-css",
-        "pranaygp.vscode-css-peek"
+        "pranaygp.vscode-css-peek",
+        "gera2ld.markmap-vscode"
     ]
 }

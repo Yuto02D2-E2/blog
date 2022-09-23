@@ -5,12 +5,15 @@
     "[html]": {
         // hugoの特殊なhtml (e.g. {{ hoge }} )を変にフォーマットされるのは困るので，全offにする
         // 一度設定してしまえば，今後はmarkdownしか書かないのでoffでも問題無い
-        "editor.formatOnSave": false,
         "editor.formatOnType": false,
         "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
     },
     // markdownの設定
     "[markdown]": {
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
         "editor.wordWrap": "on",
         "editor.quickSuggestions": {
             "comments": "on",
@@ -18,9 +21,9 @@
             "other": "on"
         },
     },
-    // 拡張機能：markdown all in oneの設定．デフォルトは全てtrue.
-    // ctrl+.で実行
+    // 拡張機能：markdownlintの設定．
     "markdownlint.config": {
+        "default": true,
         "MD001": false,
         "MD002": false,
         "MD013": false,
