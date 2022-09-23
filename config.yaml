@@ -13,7 +13,7 @@ publishDir: "public"
 
 enableRobotsTXT: true
 buildDrafts: false
-# enableGitInfo: true
+enableGitInfo: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -74,6 +74,7 @@ params:
     keys: ["title", "permalink", "summary", "content", "categories", "tags"]
     useExtendedSearch: true
 
+  # static/からの相対パスであることに注意
   assets:
     css: "css/custom.css"
     favicon: "images/favicon.ico"
