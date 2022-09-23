@@ -4,6 +4,7 @@ date: 2022-09-21T18:27:20+09:00
 cover:
   image: "images/cover.png"
   caption: "これはcover imageです."
+summary: "動作確認のためのテストページです"
 categories: "blog"
 tags:
 - "helloworld"
@@ -57,7 +58,7 @@ hugoが勝手に作ってくれて便利ですね．
 [click here][10]
 
 ## math test
-hugoは内部的にmathjaxというライブラリを使ってるらしいけど，なんか色々エラーが出て使えるようにするの大変だった．
+mathjaxというライブラリを使ってレンダリング？してるんだけど，このmathjaxというやつがmarkdownと相性が悪くてエラーを消すのが大変だった．
 
 今はちゃんとインラインモードとスタンドアロンモード両方使える
 
@@ -101,7 +102,7 @@ def echo(msg: str) -> None:
 if __name__ == "__main__":
     echo("hello, bob")
 ```
-`python -m venv venv`
+`$ python -m venv venv`
 
 [^1]: これは出典です[https://google.com]
 

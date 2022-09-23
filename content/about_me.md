@@ -3,6 +3,7 @@ title: "About me"
 url: "aboutme"
 cover:
   image: "images/cover.png"
+summary: "作者の経歴やスキルなど"
 categories: "readme"
 tags:
 - "readme"
@@ -86,3 +87,5 @@ tags:
   - フロントからバッグエンドまで広く浅く
 - 組み込みソフト開発？
   - Raspiを用いたサーバー構築など
+
+> end of post. thanks for reading
