@@ -6,14 +6,11 @@ DefaultContentLanguage: "en"
 languageCode: "en-US"
 googleAnalytics: G-WMX37QZ9R1
 
-contentDir: "content"
-staticDir: "static"
-layoutDir: "layouts"
-publishDir: "public"
-
-enableRobotsTXT: true
-buildDrafts: false
+enableEmoji: true
 enableGitInfo: true
+enableRobotsTXT: true
+buildDrafts: true
+hasCJKLanguage: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.

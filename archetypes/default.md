@@ -4,7 +4,7 @@ date: {{ .Date }}
 # cover:
 #   image: "images/cover.png"
 summary: ""
-categories: ""
+categories: "blog"
 tags:
 - ""
 draft: true
