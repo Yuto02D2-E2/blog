@@ -1,6 +1,12 @@
+[![GitHub Pages CI](https://github.com/Yuto02D2-E2/blog/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/Yuto02D2-E2/blog/actions/workflows/ci.yaml)
+
+---
+
 # blog repo
 
-check out here! --> <https://yuto02d2-e2.github.io/blog/>
+<br>
+
+check out here -> <https://yuto02d2-e2.github.io/blog/categories/readme/>
 
 <br>
 
