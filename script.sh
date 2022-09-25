@@ -17,12 +17,14 @@ function make() {
 
 function update() {
   # git submodule update --remote --merge
+  git status --short --branch
   git add content/* --verbose
   git commit -m "[update] content/* at ($(date '+%Y/%m/%d-%H:%M:%S')) via script.sh"
   read -p "> successfully committed. want to push? [y|n]:" yn
   if [ "$yn" = "y" ]; then
     git push -u origin main
   fi
+  git log --oneline --graph --decorate --numstat -n 2
 }
 
 while true
