@@ -8,7 +8,6 @@
 }
 
 /* フォントの設定 */
-
 /* 通常の文章 */
 :not(code),
 :not(code):not(span) {
@@ -60,4 +59,10 @@ figure.entry-cover img {
 .post-content h6 {
     padding-left: 5px;
     border-left: var(--content) 3px solid;
+}
+
+/* archivesページの設定 */
+.archive-entry-title {
+    padding-left: 5px;
+    border-left: var(--content) 5px solid;
 }
