@@ -12,7 +12,7 @@ tags:
 ---
 
 ## Profile
-甲南大学 知能情報学部のB3です．
+[甲南大学 知能情報学部 知能情報学科](https://www.konan-u.ac.jp/faculty/ii/ii/)のB3です．
 
 ## Education
 |||
@@ -24,7 +24,7 @@ tags:
 |??|??|
 
 ## Research
-甲南大学 知能情報学部 小出研究室 で最適化の研究をやっている．
+[甲南大学 知能情報学部 小出研究室](https://www.konan-u.ac.jp/hp/koide/) で最適化の研究をやっている．
 
 配属されたばかりなので研究成果などは無い．
 
@@ -48,7 +48,9 @@ tags:
 |2021/01 - 現在|ICPCの勉強会(スーパーIT)|
 |2021/06 - 2021/08|DeepLearning勉強会(スーパーIT)|
 |2021/?? - 2022/03|漫才ロボのソフト開発|
-|2021/11|ICPC国内予選 参加(スーパーIT)．予選敗退(学内?位)|
+|2021/09|AtCoder入茶|
+|2021/11|ICPC国内予選 参加(スーパーIT)．予選敗退(学内2位)|
+|2021/11|Paiza Sランク獲得|
 |2021/11 - 2021/12|プロジェクト演習でサーバー，ネットワーク，サイト構築|
 |2022/06|プレゼミ(ミニ卒研)でデータ分析プロジェクト|
 |2022/07|ICPC国内予選 参加(スーパーIT)．予選敗退(学内1位)|
@@ -58,34 +60,37 @@ tags:
 
 ## Skill
 ### Language
-- python
-- c++
-- javascript
-- c
-- shell script
-- html/css
-- processing
-- java
-- octave/matlab
+|||
+|:-:|:-:|
+|python3|:star::star::star::star::white_small_square:|
+|shell script|:star::star::star::white_small_square::white_small_square:|
+|c++|:star::star::white_small_square::white_small_square::white_small_square:|
+|javascript|:star::star::white_small_square::white_small_square::white_small_square:|
+|c|:star::star::white_small_square::white_small_square::white_small_square:|
+|html / css|:star::star::white_small_square::white_small_square::white_small_square:|
+|processing / p5.js|:star::star::white_small_square::white_small_square::white_small_square:|
+|octave / matlab|:star::white_small_square::white_small_square::white_small_square::white_small_square:|
+|java|:star::white_small_square::white_small_square::white_small_square::white_small_square:|
 
 ### Framework
 - flask
 - bootstrap
+- hugo
+- jekyll
 
 ### OS
 - windows 10
-- linux (Ubuntu, Mint)
+- linux (ubuntu, mint, centOS)
 
 ## Interest
-- 最適化，OR
-- ML/DL
-- AI
+- 最適化，OR(Operations Research)
+- AI(Artificial Intelligence)，ML(Machine Learning)，DL(Deep Learning)
 - 競技プログラミング
   - AtCoder(茶色)
   - Paiza S
 - Web開発
   - フロントからバッグエンドまで広く浅く
-- 組み込みソフト開発？
-  - Raspiを用いたサーバー構築など
+- IoT
+  - Raspberry Piを用いた自宅サーバー構築など
 
 > end of post. thanks for reading

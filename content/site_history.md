@@ -32,15 +32,23 @@ draft: true
 # サイトを作るまでの色々
 院試のためのTOEICの勉強が嫌すぎて，現実逃避がてら前から作りたいと思っていたブログサイトを作ることにした．結果的には英語のドキュメントをめちゃくちゃ読んだから良かったかもしれない．
 
-[ホームページ](https://yuto02d2-e2.github.io/)は素のHTML,CSS,JSを書いて作ったが，頻繁に更新するブログサイトで毎回HTMLなど書いていられないので，Markdownで書きたい．
+ブログといって思い浮かぶのは
+- Qiita
+- Zenn
+- note
+- はてなブログ
 
-MarkdownをHTMLにビルドするフレームワークをググると
+などだけど，これらを使うとなんかありきたりで面白くない．せっかくなので見た目とか機能を自分好みにカスタマイズして遊びたい．
+
+しかし，[以前作成したホームページ](https://yuto02d2-e2.github.io/)のように素のHTML,CSS,JavaScriptを書くというのも大変．
+ホームページと違い，頻繁に更新するブログサイトは最初の設定だけ頑張って，記事はMarkdownなどで手軽に書けるのが良い．
+そこで，MarkdownをHTMLにビルドするフレームワークをググると
 - Jekyll (Ruby)
 - Nuxt.js, Next.js, Gatsby.js (React)
 - Hugo (Go lang)
 
 などがあるらしい．これらはSSG(Static Site Generator)と呼ばれるもので，他にはSSRやCSRなどがある．
-これらのフレームワークで`*.md`ファイルを`*.html`ファイルにビルドして，静的サイトとしてデプロイするイメージ．
+SSGは，`*.md`ファイルを`*.html`ファイルにビルドして，静的サイトとしてデプロイするイメージ．(Reactのやつは動的にも出来るっぽい？)
 
 じゃあどれを選ぶかだけど，
 
@@ -52,9 +60,8 @@ MarkdownをHTMLにビルドするフレームワークをググると
 [Jekyllのdocs](http://jekyllrb-ja.github.io/docs/)が丁寧に書いてあったので(若干情報が古い気もするが)これを参考にしていく．
 
 JekyllはRubyが必要なので，まずはRuby本体をインストール．WSLだとホットリロードが出来ないという記事を見た気がするので，ローカル(Windows10)にインストールする．
-> ref:<br>
-> <https://www.ruby-lang.org/ja/documentation/installation/>
-> <https://rubyinstaller.org/downloads/>
+> ref: <https://www.ruby-lang.org/ja/documentation/installation/><br>
+> ref: <https://rubyinstaller.org/downloads/>
 
 インストーラを実行すると，ターミナルが起動して何をインストールするか入力要求される．`1,2,3`と入力しておいた．
 
@@ -66,8 +73,12 @@ JekyllはRubyが必要なので，まずはRuby本体をインストール．WSL
 
 普通に動いた．
 
+### themeが見つからない
 次にtheme(テーマ)を探す．めちゃくちゃ沢山あるが，ピンと来るものに出会えない．
+> ref: <http://jekyllrb-ja.github.io/docs/themes/><br>
+> ref: <https://jekyllrb.com/showcase/>
 
+### Hugoとの出会い
 ひたすらググって，やっと[良い感じのやつ](https://adityatelange.github.io/hugo-PaperMod/)に巡り会えたと思ったらこれはHugoのthemeだった ．
 
 しょうがないのでHugoの環境構築もして，設定がやりやすそうならHugoに変更する．
@@ -114,7 +125,6 @@ mingwをインストールした当時(大学1年生の夏休み)は，アーキ
 
 ### mingw-w64のインストール
 なんかどのサイトも微妙に違うところからインストールしててどれを信用していいのか分からん．
-> ref:
 > 1. <https://www.mingw-w64.org/downloads/#mingw-builds/>
 > 2. <https://joho.g-edu.uec.ac.jp/joho/gcc_win/>
 
@@ -157,24 +167,20 @@ Hugoのクイックスタートを試してみる．
 > ref: <https://gohugo.io/getting-started/quick-start/>
 
 themeを選択する部分で，さっき発見したやつを適用する
-> ref:
-> <https://github.com/adityatelange/hugo-PaperMod>
-> <https://github.com/adityatelange/hugo-PaperMod/wiki/Installation>
+> ref: <https://github.com/adityatelange/hugo-PaperMod><br>
+> ref: <https://github.com/adityatelange/hugo-PaperMod/wiki/Installation>
 
 `hugo server -D`で動かしてみる．
 
-良い感じ！
-
-世界最速と謳うだけあって，ビルドがめちゃくちゃ早い．Jekyllだと数秒かかっていたビルドがHugoだと数百msecで終わるし，`hugo server`から`ctrl+c`で抜ける時もなんかHugoの方が早い．
+良い感じ！！！
 
 インストール大変だったけど，Hugoのほうが高機能だし見た目もいいしHugoに決めた．
 
 ## Hugo + PaperMod themeを設定する
 `hugo new site <site name>`で雛形を作った後は，色々設定する．
 どこから手を付けていいのか訳が分からんけど，公式ドキュメントをちゃんと読んで，GitHubのサンプルとかを参考にしつつ弄っていく．ドキュメントは英語だけど，勉強だと思って頑張る．
-> ref:<br>
-> <https://gohugo.io/documentation/> <br>
-> <https://gohugo.io/getting-started/configuration/>
+> ref: <https://gohugo.io/documentation/> <br>
+> ref: <https://gohugo.io/getting-started/configuration/>
 
 ### config.yaml
 まずは`config.yaml`について．
@@ -186,13 +192,14 @@ hugoのデフォルトはconfig.tomlだけど，PaperMod製作者の人がyaml�
 デフォルトから若干変更した．複数のテンプレートを作ることも可能だが，やってない．
 
 ### layouts/
-`layouts/`以下は何も書かなければデフォルト(つまり，`themes/layouts/`)が呼ばれるので，気に入らない部分だけ上書きする．上書きする時は，`themes/layouts/`からコピーしてきてそれを編集する．オリジナルのものは触らない．
+`layouts/`以下は何も書かなければデフォルト(つまり，`themes/layouts/`)が呼ばれるので，気に入らない部分だけ上書きする．上書きする時は，`themes/layouts/`から`layouts/`にコピーしてきてそれを編集する．オリジナルのものは触らない．
 #### 修正箇所
-- 404.html(顔文字を入れた)
-- extend_head.html(独自cssの読み込み，mathjax(js)の読み込み)
-- footer.html(コピーライト部分変更)
-- post_meta.html(postのUpdate時刻を表示)
-- post_nav_link.html(prevとnextが逆になってるのを修正)
+- `layouts/404.html`(顔文字を入れた)
+- `layouts/_default/archives.html`(archivesページにsummary項目を追加)
+- `layouts/partials/extend_head.html`(独自cssの読み込み，mathjax(js)の読み込み)
+- `layouts/partials/footer.html`(コピーライト部分変更)
+- `layouts/partials/post_meta.html`(postのUpdate時刻を表示)
+- `layouts/partials/post_nav_link.html`(prevとnextが逆になってるのを修正)
 
 ### static/
 `static/`以下には独自cssやlogo等のstaticなimageを配置する．
@@ -200,9 +207,14 @@ hugoのデフォルトはconfig.tomlだけど，PaperMod製作者の人がyaml�
 ビルド後は`/`に展開されるっぽい(`hugo`コマンドでビルドして確認した．`public/`以下がビルド成果物)<br>
 つまり，`static/images/logo.png`は`images/logo.png`で参照する．ややこしい．
 
+#### 修正箇所(`static/css/custom.css`)
+- フォント
+- 見出しの飾りと余白
+- スクロール演出
+
 ### content/
 `content/posts/`以下に記事を書いていく．
-`*mk`ファイルの先頭には，必ず`front matter`を記述する．これに基づいてtagとかtitleとか色々Hugoが勝手にやってくれる．
+`*.md`ファイルの先頭には，必ず`front matter`を記述する．これに基づいてtagとかtitleとか色々Hugoが勝手にやってくれる．
 #### front matterについて
 - title: urlなどに使われるので，なるべく英語の方が良いかな
 - date: hugo newした時刻が自動入力される．post上部のupdateなどに表示される
@@ -213,20 +225,33 @@ hugoのデフォルトはconfig.tomlだけど，PaperMod製作者の人がyaml�
 
 ### other
 `resouces/`はよく分からん．消しても`hugo server`したら生成される．なにこれ？
+
 `.hugo_build.lock`もよく分からん．
 
-## 最終的なディレクトリ構成と各ファイルの役割など
+## Hugo + PaperMod theme のお気に入りポイント
+### Hugo
+- 世界最速と謳うだけあって，ビルドがめちゃくちゃ早い．Jekyllだと数秒かかっていたビルドがHugoだと数百msecで終わるし，`hugo server`から`ctrl+c`で抜ける時もなんかHugoの方が早い．
+- ドキュメントがしっかりしている
+- PaperMod themeがある ← これが一番
+### PaperMod theme
+- 最低限の機能を持ちつつ，シンプルで良い感じの見た目
+- カスタマイズも(それなりに)やりやすい
+- (英語が多いけど)ググったら大抵の情報は得られるユーザーの多さ
+- デフォルトのlight/darkテーマ切り替えがワンタップで行えて良い．(他のthemeだと，二回タップする必要があるのが多かった)
+- カテゴリー，タグによる絞り込みや，検索機能などがデフォルトで付いてるの便利
+
+## 最終的なディレクトリ構成
 ```plane
 blog/
-  ├.github/workflows/ci.yaml
+  ├.github/workflows/ci.yaml ->ciの設定
   ├.vscode/ ->エディタの設定
   ├archetypes/ ->`hugo new`コマンドでpostを作成した時のテンプレート
   ├content/ ->blogのメインコンテンツ
     ├_index.md ->よく分からんけど一応置いてる．pythonの__init__.pyのイメージだけど間違ってるかも
-    ├archives.md ->url:/blog/archives/にアクセスした時に表示される
-    ├search.md ->url:/blog/search/にアクセスした時に表示される
-    ├about_me.md ->url:/blog/aboutme/にアクセスした時に表示される
-    ├site_history.md ->url:/blog/sitehistory/にアクセスした時に表示される
+    ├archives.md
+    ├search.md
+    ├about_me.md
+    ├site_history.md
     └posts/
       ├YYYY-MM-DD-HH-MM-SS/
         ├title-1/ ->これが記事の最小単位
@@ -236,10 +261,10 @@ blog/
         └title-n/
           ├index.md
           └images/
-  ├layouts/ ->themes/*以下に同じものがあって，必要な分だけこれで上書きしている
-  ├static/ ->cssと(staticな)imageの置き場．build後はroot以下に展開される
-  ├themes/PaperMod/ ->テーマ
-  ├.gitmodules ->themeをgitのsub moduleとして登録しているので
+  ├layouts/
+  ├static/
+  ├themes/PaperMod/
+  ├.gitmodules
   ├script.sh ->自分で作ったもの．
   ├config.yaml ->hugoの設定ファイル．全ての設定が書かれている
   └README.md
@@ -270,7 +295,7 @@ $ git push -u origin main
 $ sh script.sh
 ```
 
-### レポジトリをcloneして新たな環境で始める時
+### レポジトリをcloneして新たな環境で書き始める場合
 ```bash
 $ git clone https://github.com/Yuto02D2-E2/blog.git
 $ cd blog
@@ -288,14 +313,20 @@ $ sh script.sh
 の３点．
 
 ### VSCode
-markdown系の拡張機能をいくつか入れた．導入したものは`.vsocde/extensions.json`に記載したので，新たな環境にcloneしてvscodeでそのディレクトリを開くとポップアップでおすすめされるようにしてある．
+一番使い慣れているエディタ．今では[vscode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)+[vim-keybind](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)の組み合わせが無いと生きていけない体になってしまった．
 
-その中でメインのものは以下
+既に色々と設定してきたが，特にエディタのカラー(`Solarized Light`)はとても気に入っている．白だと暗い時に眩しいし，黒だと明るい場所で見えにくいが，この色だと暗い場所でも明るい場所でも見えやすく，目も疲れにくい．素晴らしい．
+![screenshot](https://raw.githubusercontent.com/ryanolsonx/vscode-solarized-theme/master/screenshots/light-full.png)
+> ref: <https://marketplace.visualstudio.com/items?itemName=ryanolsonx.solarized>
+
+このプロジェクトに向けてやったこととしては，新たにmarkdown系の拡張機能をいくつか入れた．導入したものは`.vsocde/extensions.json`に記載したので，新たな環境にcloneしてvscodeでそのディレクトリを開くとポップアップでおすすめされるようにしてある．
+
+拡張機能の内，メインのものは以下
 - markdown-all-in-one：なんか色々できるらしい．まだ使いこなせてない
 - markdownlint：markdownの文法エラーを表示，`ctrl+.`でfixしてくれる．過剰な分はsettings.jsonでignoreする
 - paste-image：markdownファイルがアクティブな状態で`ctrl+alt+v`を押すと，クリップボード内の画像を`./images/YYYY-MM-DD-HH-MM-SS.png`に保存してmarkdownにそこまでのパスを入力してくれる
 
-後，`.vscode/settings.json`に記載した，htmlの自動フォーマットを全offにするのも必須．`.html`に書かれたHugo独自の記法が変にフォーマットされてエラーが出るのでmarkdownのみフォーマットするようにする．
+それから，`.vscode/settings.json`に記載したhtmlの自動フォーマットを全offにするのも必須．`.html`に書かれたHugo独自の記法が変にフォーマットされてエラーが出るのでmarkdownのみフォーマットするようにする．
 
 ### Shell Script
 いつものやつ．記事の作成とGitHubへのpushをするスクリプトを書いた．日付を打つのとか結構めんどいからとても便利．
@@ -306,9 +337,8 @@ markdown系の拡張機能をいくつか入れた．導入したものは`.vsoc
 CIのjobを定義したyamlファイルは，GitHubのサイトでActionsタブから探すとHugo用のテンプレートがあったので，それをそのまま使った．ネット上にも`ci.yaml`は色々公開されてるけど(Hugoのdocs含め)少し古いやり方が多かったので，GitHub公式のテンプレートを使うのが一番賢い気がする．
 
 #### 新しいGitHub Actions for GitHub Pages
-> ref:<br>
-> <https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/> <br>
-> <https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml>
+> ref: <https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/> <br>
+> ref: <https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml>
 
 `peaceiris/actions-gh-pages@v3`ではなく
 - `actions/configure-pages@v2`
@@ -349,11 +379,10 @@ Google AnalyticsとGoogle Search Console?を設定した．ホームページで
   - [x] assets:css置いてるけどここでいいのかな？→消した
   - [x] layouts:themeの設定を必要な部分だけオーバーライドする．
   - [x] static:css/,images/の置き場．config.yamlとかから相対パスでアクセス出来る．buildしたらroot以下にstatic/*が展開されてるっぽい?
-- [ ] site_historyページに画像を貼りたい．
+- [ ] site_historyページに画像を貼りたい
 - [ ] READMEにコマンドの説明を書く？
 - [ ] 記事を書く(本来の仕事)
-- [ ] welcomeページ作成→動的でなんかすごい演出をtopページでやりたい
-- [ ]
+- [x] welcomeページ作成→動的でなんかすごい演出をtopページでやりたい→これはblogサイトじゃなくてホームページの方でやる
 
 # おわりに
 思ってた3倍くらい時間かかったけど，良い感じに出来たので満足．
