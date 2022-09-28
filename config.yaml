@@ -16,8 +16,9 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: "yuto's blog"
   author: "yuto"
-  description: "this is yuto's blog site."
-  keywords: [Blog, Portfolio, PaperMod, Markdown, Hugo, GithubPages]
+  description: "en:yuto's blog site. ja:yutoのブログサイトです．"
+  keywords:
+    ["yuto", "Blog", "Portfolio", "Hugo", "PaperMod", "Markdown", "GithubPages"]
   images: ["images/logo.png"]
   DateFormat: "2006-01-02"
   defaultTheme: auto # dark, light
@@ -37,15 +38,13 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    subtitle: "written in markdown"
+    subtitle: "welcome to here. take your time, dear."
     imageUrl: "images/logo.png"
     imageWidth: 256
     imageHeight: 256
-    buttons:
-      - name: "About me"
-        url: "aboutme"
-      - name: "Site history"
-        url: "sitehistory"
+    # buttons:
+    #   - name: "readme"
+    #     url: "readme"
 
   # profile-modeでアイコンの下に表示される
   socialIcons:
@@ -96,9 +95,9 @@ minify:
 
 menu: # ヘッダーの右側にあるやつ
   main:
-    - identifier: archives
-      name: archives
-      url: "archives"
+    - identifier: readme
+      name: readme
+      url: "readme"
       weight: 10
     - identifier: categories
       name: categories
