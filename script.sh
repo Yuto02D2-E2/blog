@@ -24,7 +24,7 @@ function update() {
   if [ "$yn" = "y" ]; then
     git push -u origin main
   fi
-  git log --oneline --graph --decorate --numstat -n 2
+  git log --oneline --graph --decorate --numstat -n 5
 }
 
 while true
