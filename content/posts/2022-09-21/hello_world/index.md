@@ -123,6 +123,12 @@ if __name__ == "__main__":
 ```
 `$ python -m venv venv`
 
+## shortcode test
+twitter記事の埋め込みとか出来る．
+{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
+
+他にも`layouts/shortcodes/*.html`に追加すれば好きなものを自作できる．
+
 [^1]: これは出典です[https://google.com]
 
 [10]: https://google.com/
