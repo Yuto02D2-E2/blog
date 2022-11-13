@@ -8,6 +8,7 @@ googleAnalytics: G-WMX37QZ9R1
 
 enableEmoji: true
 enableGitInfo: true
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: true
 hasCJKLanguage: true
@@ -38,7 +39,7 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    subtitle: "welcome to here. take your time, dear."
+    subtitle: "welcome to here. take your time :)"
     imageUrl: "images/logo.png"
     imageWidth: 256
     imageHeight: 256

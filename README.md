@@ -6,7 +6,7 @@
 
 <br>
 
-check out here -> <https://yuto02d2-e2.github.io/blog/categories/readme/>
+check out here -> <https://yuto02d2-e2.github.io/blog/readme/>
 
 <br>
 
