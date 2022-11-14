@@ -48,7 +48,7 @@ If you do not want to be analyzed, please view this site in private mode of your
 
 <br>
 
-All content on this site is licensed under a
+All content on this site are licensed under a
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 </a>

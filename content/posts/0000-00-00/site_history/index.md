@@ -19,7 +19,6 @@ tags:
 - "github pages"
 - "github actions"
 - "ci"
-- "TODO"
 ---
 
 # はじめに
