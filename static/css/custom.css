@@ -14,10 +14,23 @@
     font-family: 'Klee One', cursive;
 }
 
+/* フォントの設定 */
 /* コードブロック */
 code,
 code span {
     font-family: 'Source Code Pro', monospace;
+}
+
+/* ヘッダーのナビゲーションメニューに下線入れる */
+nav ul li a {
+    text-decoration: underline;
+    text-decoration-color: rgb(203, 203, 203);
+    text-decoration-thickness: 3px;
+}
+
+/* プロフィール部分と記事一覧の隙間 */
+.profile {
+    margin-bottom: 30px;
 }
 
 /* postのcover画像の設定 */
@@ -25,6 +38,23 @@ figure.entry-cover img {
     width: 100vw;
     height: 30vh;
     object-fit: cover;
+}
+
+/* postの記事内の画像の設定 */
+figure.article-img img {
+    max-height: 85vh;
+    max-width: 95vw;
+}
+
+/* archivesページの設定 */
+.archive-entry-title {
+    padding-left: 5px;
+    border-left: var(--content) 5px solid;
+}
+
+/* 記事の上下の余白 */
+.post-content {
+    margin: 150px 0;
 }
 
 /* 記事内のヘッダー(hタグ)に関する設定 */
@@ -59,10 +89,4 @@ figure.entry-cover img {
 .post-content h6 {
     padding-left: 5px;
     border-left: var(--content) 3px solid;
-}
-
-/* archivesページの設定 */
-.archive-entry-title {
-    padding-left: 5px;
-    border-left: var(--content) 5px solid;
 }

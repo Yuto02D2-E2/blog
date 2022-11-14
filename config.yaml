@@ -100,18 +100,22 @@ menu: # ヘッダーの右側にあるやつ
       name: readme
       url: "readme"
       weight: 10
+    - identifier: archives
+      name: archives
+      url: "archives"
+      weight: 20
     - identifier: categories
       name: categories
       url: "categories"
-      weight: 20
+      weight: 30
     - identifier: tags
       name: tags
       url: "tags"
-      weight: 30
+      weight: 40
     - identifier: search
       name: search
       url: "search"
-      weight: 40
+      weight: 50
 
 # for search page
 outputs:
