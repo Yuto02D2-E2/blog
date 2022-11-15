@@ -22,10 +22,13 @@ code span {
 }
 
 /* ヘッダーのナビゲーションメニューに下線入れる */
-nav ul li a {
-    text-decoration: underline;
-    text-decoration-color: rgb(203, 203, 203);
-    text-decoration-thickness: 3px;
+#menu li a :not(span.active) {
+    border-bottom: var(--content) 2px solid;
+}
+
+/* アクティブなタブに上線も入れる */
+#menu li a span.active {
+    border-top: var(--content) 2px solid;
 }
 
 /* プロフィール部分と記事一覧の隙間 */
