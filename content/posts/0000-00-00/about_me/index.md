@@ -21,10 +21,11 @@ draft: true
 
 ## Interest
 - 最適化
+- MHs(Meta Heuristics)
 - OR(Operations Research)
-- AI(Artificial Intelligence)
 - ML(Machine Learning)
 - DL(Deep Learning)
+- AI(Artificial Intelligence)
   - 研究分野は大体ここら辺になりそう
   - これから極めていきたい
 - 競技プログラミング
@@ -54,11 +55,13 @@ draft: true
 |??|??|
 
 ## Experience
-|||
+|year/month|event|
 |:-:|:-:|
 |2019/12| 甲南大学 公募推薦入試 合格|
 |2020/03| 高等学校 卒業|
+|2020/03| 初めて自分のPCを持つ|
 |2020/04| 甲南大学 知能情報学部 入学|
+|2020/04| タッチタイピングが出来るようになった|
 |2020/04| 授業で人生初のプログラミング with Processing|
 |2020/10 - 2021/01| スーパーIT;<br> PythonでWebアプリケーション作った|
 |2021/01 - 現在| スーパーIT;<br> 競プロ勉強会|
@@ -77,27 +80,28 @@ draft: true
 |2022/06| プレゼミ(ミニ卒研);<br> DL(PyTorch)による画像認識，物体検出 |
 |2022/07| スーパーIT;<br> ICPC国内予選 予選敗退(学内1位)|
 |2022/08| 研究室配属|
+|2022/08 - 2022/09| 最適化の勉強会<br>(主にメタヒューリスティクスについて)|
 |2022/10| TOEIC L&R 初受験 540点|
 |2022/11| AtCoder 入緑 |
-|2023/??| 院試 |
-|2023/??| 卒業研究 |
+|??/??| 卒業研究 |
+|??/??| 院試 |
 |??|??|
 <!-- | 2023-04 | 甲南大学 知能情報学部 成績優秀者 このままだと表彰されそう?? | -->
 
 ## Skill
 ### Language
-|||
+|lang|level|
 |:-:|:-:|
 |python3|:star::star::star::star::white_small_square:|
 |c++|:star::star::star::white_small_square::white_small_square:|
 |c|:star::star::white_small_square::white_small_square::white_small_square:|
+|java|:star::star::white_small_square::white_small_square::white_small_square:|
 |shell script (bash, ps1)|:star::star::white_small_square::white_small_square::white_small_square:|
 |javascript|:star::star::white_small_square::white_small_square::white_small_square:|
 |processing|:star::star::white_small_square::white_small_square::white_small_square:|
 |html|:star::star::white_small_square::white_small_square::white_small_square:|
 |css|:star::star::white_small_square::white_small_square::white_small_square:|
 |octave / matlab|:star::white_small_square::white_small_square::white_small_square::white_small_square:|
-|java|:star::white_small_square::white_small_square::white_small_square::white_small_square:|
 
 ### Library and Framework
 - flask

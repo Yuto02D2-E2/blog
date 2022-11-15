@@ -232,6 +232,15 @@ hugoのデフォルトはconfig.tomlだけど，PaperMod製作者の人がyaml�
 
 `.hugo_build.lock`もよく分からん．
 
+### フォント
+通常の文字は`Klee One`，コードブロックには`Source Code Pro`を使っている．
+Kleeは初めて使ったけど良い感じ．
+
+> <https://fonts.google.com/specimen/Klee+One>
+> <https://fonts.google.com/specimen/Source+Code+Pro>
+
+やっぱり，フォントは大切．フォントが汚いと，どんなにまとまっているサイトでも微妙に見えてしまう．
+
 ## Hugo + PaperMod theme のお気に入りポイント
 ### Hugo
 - 世界最速と謳うだけあって，ビルドがめちゃくちゃ早い．Jekyllだと数秒かかっていたビルドがHugoだと数百msecで終わるし，`hugo server`から`ctrl+c`で抜ける時もなんかHugoの方が早い．
@@ -330,9 +339,16 @@ Google AnalyticsとGoogle Search Console?を設定した．ホームページで
 
 アフィカス記事は嫌いなので，広告は付けない(というかこんなブログは多分審査に通らないから付けられない)．
 
+# 完成
+まだまだやりたいことは多いけど，一旦それっぽいものが形になったので完成とする．
+
+今後は
+- [ ] shortcodeとエディタのsnippetの整備
+- [ ] cssの細かな修正
+
+などを時間のある時にやっていきたい
+
 # おわりに
 思ってた3倍くらい時間かかったけど，良い感じに出来たので満足．
-
-<br>
 
 > end of post. thanks for reading
